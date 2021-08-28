@@ -35,7 +35,7 @@ function main(){
 
     } else {
         $data = [
-            "error" => "Bad request"
+            "error" => "Bad requests_"
         ];
         $data = $REST->json($data);
         $REST->response($data, 400);
