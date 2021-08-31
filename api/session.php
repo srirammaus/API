@@ -3,7 +3,6 @@ error_reporting(E_ERROR | E_PARSE);
 require_once '../config/db_conn.php'; 
 include_once 'REST.api.php';
 include 'index_lib.php';
-header('Access-Control-Allow-Origin: http://example.com');
 function main(){
     $REST=new REST;
     try{
@@ -39,6 +38,7 @@ function main(){
             "error" => "Bad requests_"
         ];
         $data = $REST->json($data);
+        header('Access-Control-Allow-Origin: http://example.com');
         $REST->response($data, 400);
     }
 }
